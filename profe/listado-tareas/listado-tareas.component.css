@@ -1,0 +1,27 @@
+.tarea {
+  background: white;
+  padding: 2em;
+  font-size: 1em;
+  margin: 0.5em;
+  width: 250px;
+}
+.completada {
+  opacity: 0.3;
+  text-decoration: line-through;
+  background: grey;
+}
+
+.tareas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+}

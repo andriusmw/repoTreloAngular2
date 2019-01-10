@@ -1,0 +1,13 @@
+<section class="listadoTareas">
+  <h1>Mis tareas:</h1>
+  <div class="tareas">
+    <div class="tarea {{ tarea.completada ? 'completada' : '' }}" *ngFor="let tarea of arrData">
+      <h3>{{ tarea.text }}</h3>
+      <div class="controls">
+        <small>{{ tarea.id }}</small>
+        <input type="checkbox" name="completada" [checked]="tarea.completada" (change)="emitirCambioCompletada(tarea.id)" />
+        <button (click)="eliminar(tarea.id)">❌</button>
+      </div>
+    </div>
+  </div>
+</section>

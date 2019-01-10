@@ -1,0 +1,10 @@
+<header>
+  <h1>Mi app de tareas</h1>
+  <input
+    type="text"
+    placeholder="añadir tarea"
+    [(ngModel)]="newTareaText"
+    (keyup)="handleKeyup($event)"
+    [class.wrongTarea]="newTareaText.trim() === '' && newTareaText !== ''"
+  />
+</header>

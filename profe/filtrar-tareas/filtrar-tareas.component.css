@@ -1,0 +1,6 @@
+.filtro {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  opacity: 0.7;
+}

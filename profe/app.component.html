@@ -1,0 +1,13 @@
+<crear-tarea (nuevaTarea)="anyadirTarea($event)"></crear-tarea>
+
+<filtrar-tareas (nuevaQuery)="filtrarTareas($event)" (reset)="borrarFiltro()"></filtrar-tareas>
+
+<listado-tareas
+  (borrarTarea)="eliminarTarea($event)"
+  [arrData]="tareasFiltradas"
+  (alternarCompletada)="alternarCompletada($event)"
+></listado-tareas>
+
+<pre>
+  {{ tareas | json }}
+</pre>
