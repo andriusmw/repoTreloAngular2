@@ -1,0 +1,18 @@
+<section class="listadoTareas" >
+    <h1>Mis tareas:</h1>
+    <div class="tareas" class="flex-container">
+      <!-- aplico la interfaz task a la clase tarea -->
+      <div *ngFor="let tarea of arrayData" class="tarea {{ tarea.completada ? 'completada' : '' }}">   
+        <h3>TÍTULO: {{ tarea.text }}</h3>
+        <div class="controls">
+          <small>ID: {{ tarea.id }}</small>
+          <!-- cheked recibe tarea.completada y cambia entonces changue se ejecuta y emite el cambio.-->
+          <input type="checkbox" name="completada" 
+          [checked]="tarea.completada" 
+          (change)="emitirCambioCompletada(tarea.id)"/>
+         <button (click)="eliminar(tarea.id)">❌</button>
+         
+        </div>
+      </div>
+    </div>
+  </section>
