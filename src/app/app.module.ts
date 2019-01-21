@@ -10,7 +10,7 @@ import { BoardComponent } from './board/board.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-/*import { ApiService } from './api.service';*/
+/*import { ApiService } from './api.service'; */
 
 
 
@@ -29,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule,
     FormsModule,
     HttpClientModule,
     

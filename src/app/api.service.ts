@@ -1,4 +1,4 @@
-/*
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Task, List } from './models.interface';
@@ -70,4 +70,4 @@ export class ApiService {
     return this.http.delete('https://apitrello.herokuapp.com/list/' + id, options).toPromise();
   }
 }
-*/
+

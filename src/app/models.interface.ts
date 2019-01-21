@@ -1,4 +1,4 @@
-/*
+
 export interface Task {
     listId: number;
     taskId: number;
@@ -21,4 +21,4 @@ export interface Task {
     lists: Array<List>;
   }
 
-  */
+  

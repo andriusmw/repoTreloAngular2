@@ -1,3 +1,19 @@
-<p>
-  board works!
-</p>
+<!--The content below is only a placeholder and can be replaced.-->
+<app-navbar></app-navbar>
+<header>
+  <h1>
+    App 3 lista de tareas (desacierto 1 (?))
+  </h1>
+  <input type="text" placeholder="añadir tarea" (keyup)="handdleKeyup($event)">
+</header>
+
+<arrayDeTareas [arrayData]="arrayDeTareas" 
+(alternarCompletada)="alternarCompletadaPadre($event)" 
+(borrarTarea)="eliminarTareaPadre($event)">  <!-- Se suscribe a borrarTarea ( del hijo) y llama a eliminar Tarea Padre-->
+
+</arrayDeTareas>
+
+
+<pre>
+  {{ arrayDeTareas | json}}
+</pre>
