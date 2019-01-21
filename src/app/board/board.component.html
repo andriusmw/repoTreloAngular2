@@ -4,16 +4,32 @@
   <h1>
     App 3 lista de tareas (desacierto 1 (?))
   </h1>
-  <input type="text" placeholder="añadir tarea" (keyup)="handdleKeyup($event)">
+  <!--<input type="text" placeholder="añadir tarea" (keyup)="handdleKeyup($event)">-->
 </header>
 
+<!-- 
 <arrayDeTareas [arrayData]="arrayDeTareas" 
 (alternarCompletada)="alternarCompletadaPadre($event)" 
-(borrarTarea)="eliminarTareaPadre($event)">  <!-- Se suscribe a borrarTarea ( del hijo) y llama a eliminar Tarea Padre-->
+(borrarTarea)="eliminarTareaPadre($event)">   Se suscribe a borrarTarea ( del hijo) y llama a eliminar Tarea Padre
 
 </arrayDeTareas>
 
 
 <pre>
   {{ arrayDeTareas | json}}
-</pre>
+</pre> -->
+
+<div>
+  Aquí abajo comienza lo que conecta con back end 
+</div>
+
+<section>
+  <!-- Muestra el componente para añadir listas-->
+  <app-add-new-list></app-add-new-list>
+  <!-- Muestra el componente de cargar las listas-->
+  <app-show-lists [lists]="data.lists"></app-show-lists>
+</section>
+
+<pre>
+  {{ data | json }}
+</pre> 

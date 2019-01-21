@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import { Task } from '../app.tasks.interface';
 
 @Component({
@@ -8,10 +8,10 @@ import { Task } from '../app.tasks.interface';
 })
 export class BoardComponent implements OnInit {
   title = 'app3';
-  /* -- ArrayDeTareas --*/
+  /* -- ArrayDeTareas --*/ /*
   arrayDeTareas = [{ text: 'prueba', id: 0, completada: true }];
 
-  /*-- Añadir la tarea  al array de tareas */
+  /*-- Añadir la tarea  al array de tareas */ /*
   addTarea(textoInput) {
     let newTask = { text: textoInput, id: Date.now(), completada: false };
     this.arrayDeTareas.push(newTask);
@@ -19,7 +19,7 @@ export class BoardComponent implements OnInit {
   }
 
   /*-- Falta combinar el comprobar intro con llamar a añadir la tarea  */
-
+/*
   handdleKeyup(ev) {
     console.log('keyup event fired!');
     if (ev.keyCode === 13) {
@@ -31,6 +31,7 @@ export class BoardComponent implements OnInit {
 
   /* Alternar completada desde el padre */
   /* el algoritmo cambia la clase de .completa a ""*/
+  /*
   alternarCompletadaPadre(id) {
     this.arrayDeTareas = this.arrayDeTareas.map(tarea => {
       if (tarea.id === id) {
@@ -41,7 +42,7 @@ export class BoardComponent implements OnInit {
     });
   }
 
-  /* Filtrar tarea se usa para luego borrar */
+  /* Filtrar tarea se usa para luego borrar */ /*
   query: string = '';
   
   tareasFiltradas: Array<Task> = this.arrayDeTareas;
@@ -52,7 +53,7 @@ export class BoardComponent implements OnInit {
 
 
   /* Eliminar TareaPdre  */
-  /* Requiere Filtrar Tarea NPI del por qué */ 
+  /* Requiere Filtrar Tarea NPI del por qué */ /*
   eliminarTareaPadre(id) {
     this.arrayDeTareas = this.arrayDeTareas.filter(tarea => tarea.id !== id);
     this.filtrarTareas(this.query);
@@ -64,4 +65,23 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
   }
 
+}
+*/
+
+import { Component, OnInit } from '@angular/core';
+import { DataManagerService } from '../data-manager.service';
+import { Data } from '../models.interface';
+
+@Component({
+  selector: 'app-board',
+  templateUrl: './board.component.html',
+  /*styleUrls: ['./board.component.scss'],*/
+})
+export class BoardComponent implements OnInit {
+  data: Data;
+  constructor(private dataManager: DataManagerService) {}
+
+  ngOnInit() {
+    this.data = this.dataManager.getData();
+  }
 }

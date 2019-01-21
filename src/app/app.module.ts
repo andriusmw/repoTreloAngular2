@@ -10,7 +10,12 @@ import { BoardComponent } from './board/board.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-/*import { ApiService } from './api.service'; */
+import { AddNewListComponent } from './add-new-list/add-new-list.component';
+import { ApiService } from './api.service'; 
+import { DataManagerService } from './data-manager.service';
+import { ShowListsComponent } from './show-list/show-list.component';
+import { ListComponent } from './list/list.component';
+import { TaskComponent } from './task/task.component';
 
 
 
@@ -22,7 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoginViewComponent,
     BoardComponent,
     NavbarComponent,
-    AppComponent
+    AppComponent,
+    AddNewListComponent,
+    ShowListsComponent,
+    ListComponent,
+    TaskComponent
     
     
   ],
@@ -34,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     
     
   ],
-  providers: [/*ApiService*/],
+  providers: [ApiService, DataManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
