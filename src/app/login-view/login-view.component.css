@@ -1,0 +1,12 @@
+input {
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+form {
+    background-color:rgb(93, 154, 224);
+   
+    
+}

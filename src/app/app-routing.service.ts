@@ -5,6 +5,7 @@ import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view.component/register-view.component.component'; /*crearlo component*/
 import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
+  /*definir las rutas de navegación de la pag*/
   {
     path: 'board',
     component: BoardComponent,

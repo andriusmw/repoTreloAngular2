@@ -4,4 +4,6 @@
     flex-direction: row;
   }
 
- 
+nav {
+  height: 10%;
+} 

@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 
-import { List, Task } from './models.interface';
+import { List, Task } from './models.interface'; /* Importa las clases List y Task de la interfaz*/
 import { ApiService } from './api.service';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DataManagerService {
-  data: { lists: Array<List> } = {
-    lists: [],
+export class DataManagerService {   
+  data: { lists: Array<List> } = {  /*Guarda array de listas en "data" */
+    lists: [], /*Crea array vacío para lists por defecto */
   };
   constructor(private api: ApiService, private router: Router) {}
 
-  loadDataFromBackend() {
+  loadDataFromBackend() { 
+    /* función llamar datos del backend: llama la api usando el método getlist()
+    después : hace un arrow function donde declara un array en el que guarda la respuesta*/ 
     this.api
       .getLists()
       .then((rawLists: Array<any>) => {
@@ -42,14 +44,18 @@ export class DataManagerService {
         ).then(lists => {
           this.data.lists = lists;
         });
-      })
+      }) 
+      /* sino funciona hace que vayas al login */
       .catch(() => this.router.navigate(['/login']));
   }
 
+  /* llama a la función de arriba pero más corto para poderlo usar fuera */
   getData() {
     this.loadDataFromBackend();
     return this.data;
   }
+
+  /* añade una lista nueva y la muestra */
   addNewList(name: string) {
     // const now = new Date();
     // const newList: List = {
@@ -66,12 +72,14 @@ export class DataManagerService {
       this.loadDataFromBackend();
     });
   }
+  /*borra una lista*/
   deleteList(listId: number) {
     // this.data.lists = this.data.lists.filter(list => list.listId !== listId);
     this.api.deleteList(listId).then(res => {
       this.loadDataFromBackend();
     });
   }
+  /* añade una nueva tarea en donde coincida el list.id*/
   addNewTask(text: string, list: List) {
     const now = new Date();
     const newTask: Task = {
@@ -90,6 +98,8 @@ export class DataManagerService {
       return listObj;
     });
   }
+  /* borra tarea donde coincida el list.id pero no funciona porque el backend no coincide o no tiene 
+  habilitada la opción. */
   deleteTask(task: Task) {
     this.data.lists = this.data.lists.map(listObj => {
       if (listObj.listId === task.listId) {
@@ -98,9 +108,12 @@ export class DataManagerService {
       return listObj;
     });
   }
+  /*cambia el nombre de la lista donde coincida el id*/
   editListName(list: List) {
     this.data.lists = this.data.lists.map(listObj => (listObj.listId === list.listId ? list : listObj));
   }
+
+  
   editTask(newTask: Task) {
     this.data.lists = this.data.lists.map(list => {
       if (list.listId === newTask.listId) {
