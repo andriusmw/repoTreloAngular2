@@ -85,9 +85,9 @@ export class DataManagerService {
     });
   }
   /*borra una lista*/
-  deleteList(listId: number) {
+  deleteList(listId: number) { /* Viene aquí desde list.component.ts cuando se hace click en delete*/
     // this.data.lists = this.data.lists.filter(list => list.listId !== listId);
-    this.api.deleteList(listId).then(res => {
+    this.api.deleteList(listId).then(res => { /* Llama a la api y hace deleteList( con el id de la lista)*/
       this.loadDataFromBackend();
     });
   }

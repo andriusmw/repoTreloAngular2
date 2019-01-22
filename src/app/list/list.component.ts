@@ -15,7 +15,7 @@ export class ListComponent {
 
   constructor(private dataService: DataManagerService) {}
 
-  delete() {
+  delete() { /* viene aquí cuando se hace click en el icono de delete (que no funciona))*/
     if (confirm('Do you really want to delete the list ' + this.list.name)) {
       this.dataService.deleteList(this.list.listId);
     }
